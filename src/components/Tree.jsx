@@ -3,13 +3,13 @@ import * as d3 from "d3";
 import { collection, onSnapshot } from "firebase/firestore";
 import {db} from '../firebase'
 import { ModalStateContext } from "../context/ModalStateContext"
-import AddMemberModal from "./addMemberModal"
+import AddMemberModal from "./AddMemberModal"
 import buildTree from "../utils/buildTree";
 
 export default function Tree(){
   const [members, setMembers] = useState([])
   const {isOpenModal, setIsOpenModal}= useContext(ModalStateContext)
-  
+
   const svgRef = useRef();
 
   const drawTree=(data)=>{
